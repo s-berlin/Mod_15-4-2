@@ -23,7 +23,7 @@ bool Chat::login(char _login[LOGINLENGTH], char _pass[], int pass_length) {
         }
 
         if (eq) {
-            cout << "chat: data[i].pass_sha1_hash = " << data[i].pass_sha1_hash << "       sha1(_pass, sizeof(_pass) - 1) = " << sha1(_pass, sizeof(_pass) - 1) << endl;
+            cout << "chat: data[i].pass_sha1_hash = " << data[i].pass_sha1_hash << "       sha1(_pass, sizeof(_pass) - 1) = " << sha1(_pass, sizeof(_pass) - 1) << "      delta = " << data[i].pass_sha1_hash - sha1(_pass, sizeof(_pass) - 1) << endl;
             if (data[i].pass_sha1_hash == sha1(_pass, sizeof(_pass) - 1))                 return true;
             }
         }
